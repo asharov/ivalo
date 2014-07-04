@@ -10,6 +10,15 @@
 		B02CBFBF19661DC10056D034 /* Ivalo.h in Headers */ = {isa = PBXBuildFile; fileRef = B02CBFBE19661DC10056D034 /* Ivalo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02CBFC519661DC10056D034 /* Ivalo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02CBFB919661DC10056D034 /* Ivalo.framework */; };
 		B02CBFCC19661DC10056D034 /* IvaloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CBFCB19661DC10056D034 /* IvaloTests.swift */; };
+		B02CC007196753C60056D034 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CC006196753C60056D034 /* Base.swift */; };
+		B02CC0091967543C0056D034 /* Snuggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CC0081967543C0056D034 /* Snuggle.swift */; };
+		B02CC01319676B0B0056D034 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CC01219676B0B0056D034 /* AppDelegate.swift */; };
+		B02CC01519676B0B0056D034 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CC01419676B0B0056D034 /* FirstViewController.swift */; };
+		B02CC01719676B0B0056D034 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CC01619676B0B0056D034 /* SecondViewController.swift */; };
+		B02CC01A19676B0B0056D034 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B02CC01819676B0B0056D034 /* Main.storyboard */; };
+		B02CC01C19676B0B0056D034 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02CC01B19676B0B0056D034 /* Images.xcassets */; };
+		B02CC02819676B0B0056D034 /* IvaloExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CC02719676B0B0056D034 /* IvaloExampleTests.swift */; };
+		B02CC02F19676B580056D034 /* Ivalo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02CBFB919661DC10056D034 /* Ivalo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,6 +29,13 @@
 			remoteGlobalIDString = B02CBFB819661DC10056D034;
 			remoteInfo = Ivalo;
 		};
+		B02CC02219676B0B0056D034 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B02CBFB019661DC10056D034 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B02CC00D19676B0B0056D034;
+			remoteInfo = IvaloExample;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +45,18 @@
 		B02CBFC419661DC10056D034 /* IvaloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IvaloTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02CBFCA19661DC10056D034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B02CBFCB19661DC10056D034 /* IvaloTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvaloTests.swift; sourceTree = "<group>"; };
+		B02CC006196753C60056D034 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		B02CC0081967543C0056D034 /* Snuggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snuggle.swift; sourceTree = "<group>"; };
+		B02CC00E19676B0B0056D034 /* IvaloExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IvaloExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B02CC01119676B0B0056D034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B02CC01219676B0B0056D034 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B02CC01419676B0B0056D034 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		B02CC01619676B0B0056D034 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		B02CC01919676B0B0056D034 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B02CC01B19676B0B0056D034 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B02CC02119676B0B0056D034 /* IvaloExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IvaloExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B02CC02619676B0B0056D034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B02CC02719676B0B0056D034 /* IvaloExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvaloExampleTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +75,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B02CC00B19676B0B0056D034 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B02CC02F19676B580056D034 /* Ivalo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B02CC01E19676B0B0056D034 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,6 +98,8 @@
 			children = (
 				B02CBFBB19661DC10056D034 /* Ivalo */,
 				B02CBFC819661DC10056D034 /* IvaloTests */,
+				B02CC00F19676B0B0056D034 /* IvaloExample */,
+				B02CC02419676B0B0056D034 /* IvaloExampleTests */,
 				B02CBFBA19661DC10056D034 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +109,8 @@
 			children = (
 				B02CBFB919661DC10056D034 /* Ivalo.framework */,
 				B02CBFC419661DC10056D034 /* IvaloTests.xctest */,
+				B02CC00E19676B0B0056D034 /* IvaloExample.app */,
+				B02CC02119676B0B0056D034 /* IvaloExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +120,8 @@
 			children = (
 				B02CBFBE19661DC10056D034 /* Ivalo.h */,
 				B02CBFBC19661DC10056D034 /* Supporting Files */,
+				B02CC006196753C60056D034 /* Base.swift */,
+				B02CC0081967543C0056D034 /* Snuggle.swift */,
 			);
 			path = Ivalo;
 			sourceTree = "<group>";
@@ -98,6 +147,44 @@
 			isa = PBXGroup;
 			children = (
 				B02CBFCA19661DC10056D034 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B02CC00F19676B0B0056D034 /* IvaloExample */ = {
+			isa = PBXGroup;
+			children = (
+				B02CC01219676B0B0056D034 /* AppDelegate.swift */,
+				B02CC01419676B0B0056D034 /* FirstViewController.swift */,
+				B02CC01619676B0B0056D034 /* SecondViewController.swift */,
+				B02CC01819676B0B0056D034 /* Main.storyboard */,
+				B02CC01B19676B0B0056D034 /* Images.xcassets */,
+				B02CC01019676B0B0056D034 /* Supporting Files */,
+			);
+			path = IvaloExample;
+			sourceTree = "<group>";
+		};
+		B02CC01019676B0B0056D034 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B02CC01119676B0B0056D034 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B02CC02419676B0B0056D034 /* IvaloExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				B02CC02719676B0B0056D034 /* IvaloExampleTests.swift */,
+				B02CC02519676B0B0056D034 /* Supporting Files */,
+			);
+			path = IvaloExampleTests;
+			sourceTree = "<group>";
+		};
+		B02CC02519676B0B0056D034 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B02CC02619676B0B0056D034 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -152,6 +239,41 @@
 			productReference = B02CBFC419661DC10056D034 /* IvaloTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B02CC00D19676B0B0056D034 /* IvaloExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B02CC02919676B0B0056D034 /* Build configuration list for PBXNativeTarget "IvaloExample" */;
+			buildPhases = (
+				B02CC00A19676B0B0056D034 /* Sources */,
+				B02CC00B19676B0B0056D034 /* Frameworks */,
+				B02CC00C19676B0B0056D034 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IvaloExample;
+			productName = IvaloExample;
+			productReference = B02CC00E19676B0B0056D034 /* IvaloExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B02CC02019676B0B0056D034 /* IvaloExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B02CC02C19676B0B0056D034 /* Build configuration list for PBXNativeTarget "IvaloExampleTests" */;
+			buildPhases = (
+				B02CC01D19676B0B0056D034 /* Sources */,
+				B02CC01E19676B0B0056D034 /* Frameworks */,
+				B02CC01F19676B0B0056D034 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B02CC02319676B0B0056D034 /* PBXTargetDependency */,
+			);
+			name = IvaloExampleTests;
+			productName = IvaloExampleTests;
+			productReference = B02CC02119676B0B0056D034 /* IvaloExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -169,6 +291,13 @@
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = B02CBFB819661DC10056D034;
 					};
+					B02CC00D19676B0B0056D034 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					B02CC02019676B0B0056D034 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = B02CC00D19676B0B0056D034;
+					};
 				};
 			};
 			buildConfigurationList = B02CBFB319661DC10056D034 /* Build configuration list for PBXProject "Ivalo" */;
@@ -177,6 +306,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = B02CBFAF19661DC10056D034;
 			productRefGroup = B02CBFBA19661DC10056D034 /* Products */;
@@ -185,6 +315,8 @@
 			targets = (
 				B02CBFB819661DC10056D034 /* Ivalo */,
 				B02CBFC319661DC10056D034 /* IvaloTests */,
+				B02CC00D19676B0B0056D034 /* IvaloExample */,
+				B02CC02019676B0B0056D034 /* IvaloExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -204,6 +336,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B02CC00C19676B0B0056D034 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B02CC01A19676B0B0056D034 /* Main.storyboard in Resources */,
+				B02CC01C19676B0B0056D034 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B02CC01F19676B0B0056D034 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -211,6 +359,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B02CC007196753C60056D034 /* Base.swift in Sources */,
+				B02CC0091967543C0056D034 /* Snuggle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +372,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B02CC00A19676B0B0056D034 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B02CC01719676B0B0056D034 /* SecondViewController.swift in Sources */,
+				B02CC01319676B0B0056D034 /* AppDelegate.swift in Sources */,
+				B02CC01519676B0B0056D034 /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B02CC01D19676B0B0056D034 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B02CC02819676B0B0056D034 /* IvaloExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -230,7 +398,23 @@
 			target = B02CBFB819661DC10056D034 /* Ivalo */;
 			targetProxy = B02CBFC619661DC10056D034 /* PBXContainerItemProxy */;
 		};
+		B02CC02319676B0B0056D034 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B02CC00D19676B0B0056D034 /* IvaloExample */;
+			targetProxy = B02CC02219676B0B0056D034 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B02CC01819676B0B0056D034 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B02CC01919676B0B0056D034 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B02CBFCD19661DC10056D034 /* Debug */ = {
@@ -321,6 +505,7 @@
 		B02CBFD019661DC10056D034 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -331,12 +516,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		B02CBFD119661DC10056D034 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -382,6 +569,70 @@
 			};
 			name = Release;
 		};
+		B02CC02A19676B0B0056D034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = IvaloExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B02CC02B19676B0B0056D034 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = IvaloExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B02CC02D19676B0B0056D034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IvaloExample.app/IvaloExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = IvaloExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		B02CC02E19676B0B0056D034 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IvaloExample.app/IvaloExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = IvaloExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -407,6 +658,22 @@
 			buildConfigurations = (
 				B02CBFD319661DC10056D034 /* Debug */,
 				B02CBFD419661DC10056D034 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B02CC02919676B0B0056D034 /* Build configuration list for PBXNativeTarget "IvaloExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B02CC02A19676B0B0056D034 /* Debug */,
+				B02CC02B19676B0B0056D034 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B02CC02C19676B0B0056D034 /* Build configuration list for PBXNativeTarget "IvaloExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B02CC02D19676B0B0056D034 /* Debug */,
+				B02CC02E19676B0B0056D034 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
