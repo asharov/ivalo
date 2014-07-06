@@ -8,7 +8,6 @@
 
 import Foundation
 
-operator infix <-- { associativity none }
 operator infix +-+ { associativity left precedence 110 }
 operator infix ++ { associativity left precedence 110 }
 

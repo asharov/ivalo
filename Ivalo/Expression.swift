@@ -12,7 +12,7 @@ operator prefix | {}
 operator postfix | {}
 operator prefix - {}
 operator postfix - {}
-operator infix ~=~ { precedence 130 }
+operator infix ~=~ { associativity left precedence 130 }
 
 class ExpressionValue {
     let expression: Expression
@@ -28,6 +28,10 @@ enum Expression {
     case LinearFunction(CGFloat, ExpressionValue, CGFloat)
 }
 
+struct Equality {
+    let expressions: Expression[]
+}
+
 func expressionToLayout (expression: Expression) -> (view: UIView?, attribute: NSLayoutAttribute, multiplier: CGFloat, constant: CGFloat) {
     switch (expression) {
     case .Number(let value):
@@ -40,6 +44,12 @@ func expressionToLayout (expression: Expression) -> (view: UIView?, attribute: N
         let (view, attribute, innerMultiplier, innerConstant) = expressionToLayout(expression.expression)
         return (view, attribute, multiplier * innerMultiplier, multiplier * innerConstant + constant)
     }
+}
+
+func equalityConstraint (left: Expression, right: Expression) -> NSLayoutConstraint {
+    let leftLayout = expressionToLayout(left)
+    let rightLayout = expressionToLayout(right)
+    return NSLayoutConstraint(item: leftLayout.view, attribute: leftLayout.attribute, relatedBy: NSLayoutRelation.Equal, toItem: rightLayout.view, attribute: rightLayout.attribute, multiplier: rightLayout.multiplier / leftLayout.multiplier, constant: (rightLayout.constant - leftLayout.constant) / leftLayout.multiplier)
 }
 
 @prefix func | (view: UIView) -> Expression {
@@ -86,12 +96,25 @@ func + (expression: Expression, constant: CGFloat) -> Expression {
     return .LinearFunction(1.0, ExpressionValue(expression: expression), constant)
 }
 
-func ~=~ (left: Expression, right: CGFloat) -> NSLayoutConstraint[] {
+func ~=~ (left: Expression, right: CGFloat) -> Equality {
     return left ~=~ Expression.Number(right)
 }
 
-func ~=~ (left: Expression, right: Expression) -> NSLayoutConstraint[] {
-    let leftLayout = expressionToLayout(left)
-    let rightLayout = expressionToLayout(right)
-    return [NSLayoutConstraint(item: leftLayout.view, attribute: leftLayout.attribute, relatedBy: NSLayoutRelation.Equal, toItem: rightLayout.view, attribute: rightLayout.attribute, multiplier: rightLayout.multiplier / leftLayout.multiplier, constant: (rightLayout.constant - leftLayout.constant) / leftLayout.multiplier)]
+func ~=~ (left: Expression, right: Expression) -> Equality {
+    return Equality(expressions: [left, right])
+}
+
+func ~=~ (left: Equality, right: CGFloat) -> Equality {
+    return left ~=~ Expression.Number(right)
+}
+
+func ~=~ (left: Equality, right: Expression) -> Equality {
+    return Equality(expressions: left.expressions + [right])
+}
+
+func <-- (view: UIView, equality: Equality) -> UIView {
+    for i in 1..equality.expressions.count {
+        view <-- equalityConstraint(equality.expressions[i-1], equality.expressions[i])
+    }
+    return view
 }

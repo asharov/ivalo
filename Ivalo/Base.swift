@@ -8,6 +8,8 @@
 
 import Foundation
 
+operator infix <-- { associativity none }
+
 enum Edge {
     case Left
     case Top
@@ -53,6 +55,11 @@ func attributeForDimension (dimension: Dimension) -> NSLayoutAttribute {
     case .Height:
         return NSLayoutAttribute.Height
     }
+}
+
+func <-- (view: UIView, constraint: NSLayoutConstraint) -> UIView {
+    view.addConstraint(constraint)
+    return view
 }
 
 func <-- (view: UIView, constraints: NSLayoutConstraint[]) -> UIView {

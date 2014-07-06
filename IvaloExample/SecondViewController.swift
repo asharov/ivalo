@@ -21,12 +21,10 @@ class SecondViewController: UIViewController {
 
         view <-- Edge.Left ++ 50 ++ blueView ++ 10 ++ redView ++ 10 ++ Edge.Right
         view <-- Edge.Top ++ 100 ++ blueView
-        view <-- |blueView| ~=~ 100
-        view <-- -blueView- ~=~ 100
+        view <-- |blueView| ~=~ |greenView| ~=~ 100
+        view <-- -blueView- ~=~ -greenView- ~=~ 100
         view <-- -redView- ~=~ 150
         view <-- -blueView ~=~ -redView
-        view <-- |blueView| ~=~ |greenView|
-        view <-- -blueView- ~=~ -greenView-
         view <-- |blueView ~=~ |greenView
         view <-- blueView- ~=~ -greenView
     }
