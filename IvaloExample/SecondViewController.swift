@@ -24,6 +24,11 @@ class SecondViewController: UIViewController {
         view <-- |blueView| ~=~ 100
         view <-- -blueView- ~=~ 100
         view <-- -redView- ~=~ 150
+        view <-- -blueView ~=~ -redView
+        view <-- |blueView| ~=~ |greenView|
+        view <-- -blueView- ~=~ -greenView-
+        view <-- |blueView ~=~ |greenView
+        view <-- blueView- ~=~ -greenView
     }
 
 }
