@@ -20,12 +20,11 @@ class FirstViewController: UIViewController {
         let yellowView = makeColorView(self.view, UIColor.yellowColor())
 
         view <-- Edge.Left +-+ blueView +-+ redView +-+ Edge.Right
-        view <-- Edge.Top +-+ blueView +-+ greenView
-        view <-- Edge.Left +-+ greenView +-+ yellowView +-+ Edge.Right
-        view <-- Edge.Top +-+ redView +-+ yellowView
-
-        view <-- |blueView| ~=~ 2 * |redView| ~=~ -redView- ~=~ 2 * -yellowView-
-        view <-- 2 * -blueView- ~=~ -greenView- ~=~ 2 * |redView| ~=~ |yellowView|
+            <-- Edge.Top +-+ blueView +-+ greenView
+            <-- Edge.Left +-+ greenView +-+ yellowView +-+ Edge.Right
+            <-- Edge.Top +-+ redView +-+ yellowView
+            <-- |blueView| ~=~ 2 * |redView| ~=~ -redView- ~=~ 2 * -yellowView-
+            <-- 2 * -blueView- ~=~ -greenView- ~=~ 2 * |redView| ~=~ |yellowView|
     }
 
 }
