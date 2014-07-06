@@ -12,6 +12,12 @@ operator infix <-- { associativity none }
 operator infix +-+ { associativity left precedence 110 }
 operator infix ++ { associativity left precedence 110 }
 
+struct ProspectiveLayout {
+    let leadingEdge: Edge
+    let constraints: NSLayoutConstraint[]
+    let remainingGlue: CGFloat
+}
+
 func previousViewInLayout (layout: ProspectiveLayout, view: UIView?) -> UIView? {
     if (layout.constraints.endIndex > 0) {
         return layout.constraints[layout.constraints.endIndex - 1].firstItem as? UIView
@@ -75,4 +81,8 @@ func ++ (layout: ProspectiveLayout, edge: Edge) -> ProspectiveLayout {
 
 func +-+ (layout: ProspectiveLayout, edge: Edge) -> ProspectiveLayout {
     return sideBySide(layout, edge, 20.0)
+}
+
+func <-- (view: UIView, layout: ProspectiveLayout) -> UIView {
+    return view <-- layout.constraints
 }

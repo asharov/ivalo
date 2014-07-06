@@ -20,12 +20,6 @@ enum Dimension {
     case Height
 }
 
-struct ProspectiveLayout {
-    let leadingEdge: Edge
-    let constraints: NSLayoutConstraint[]
-    let remainingGlue: CGFloat
-}
-
 func attributeForEdge (edge: Edge) -> NSLayoutAttribute {
     switch edge {
     case .Left:
@@ -59,10 +53,6 @@ func attributeForDimension (dimension: Dimension) -> NSLayoutAttribute {
     case .Height:
         return NSLayoutAttribute.Height
     }
-}
-
-func <-- (view: UIView, layout: ProspectiveLayout) -> UIView {
-    return view <-- layout.constraints
 }
 
 func <-- (view: UIView, constraints: NSLayoutConstraint[]) -> UIView {
