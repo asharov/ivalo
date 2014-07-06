@@ -28,14 +28,16 @@ class FirstViewController: UIViewController {
         let yellowView = makeColorView(UIColor.yellowColor())
 
         view <-- Edge.Left +-+ blueView +-+ redView +-+ Edge.Right
-        view <-- Edge.Top +-+ blueView +-+ greenView +-+ Edge.Bottom
+        view <-- Edge.Top +-+ blueView +-+ greenView
         view <-- Edge.Left +-+ greenView +-+ yellowView +-+ Edge.Right
-        view <-- Edge.Top +-+ redView +-+ yellowView +-+ Edge.Bottom
+        view <-- Edge.Top +-+ redView +-+ yellowView
 
         view <-- |blueView| ~=~ 2 * |redView|
         view <-- 2 * |greenView| ~=~ |yellowView|
         view <-- 2 * -blueView- ~=~ -greenView-
         view <-- -redView- ~=~ 2 * -yellowView-
+        view <-- -blueView- ~=~ |redView|
+        view <-- |blueView| ~=~ -redView-
     }
 
     override func didReceiveMemoryWarning() {
