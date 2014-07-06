@@ -23,7 +23,7 @@ class FirstViewController: UIViewController {
             <-- Edge.Top +-+ blueView +-+ greenView
             <-- Edge.Left +-+ greenView +-+ yellowView +-+ Edge.Right
             <-- Edge.Top +-+ redView +-+ yellowView
-            <-- |blueView| ~=~ 2 * |redView| ~=~ -redView- ~=~ 2 * -yellowView-
+            <-- |blueView| ~=~ 2 * |greenView| ~=~ -redView- ~=~ 2 * -yellowView-
             <-- 2 * -blueView- ~=~ -greenView- ~=~ 2 * |redView| ~=~ |yellowView|
     }
 
