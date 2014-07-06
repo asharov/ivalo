@@ -19,10 +19,11 @@ class SecondViewController: UIViewController {
         let greenView = makeColorView(self.view, UIColor.greenColor())
         let yellowView = makeColorView(self.view, UIColor.yellowColor())
 
-        view <-- Edge.Left ++ 50 ++ blueView
+        view <-- Edge.Left ++ 50 ++ blueView ++ 10 ++ redView ++ 10 ++ Edge.Right
         view <-- Edge.Top ++ 100 ++ blueView
-        view <-- |blueView| ~=~ 200
+        view <-- |blueView| ~=~ 100
         view <-- -blueView- ~=~ 100
+        view <-- -redView- ~=~ 150
     }
 
 }

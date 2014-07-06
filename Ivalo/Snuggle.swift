@@ -61,6 +61,10 @@ func ++ (layout: ProspectiveLayout, view: UIView) -> ProspectiveLayout {
     return sideBySide(layout, view, 0.0)
 }
 
+func ++ (layout: ProspectiveLayout, glue: CGFloat) -> ProspectiveLayout {
+    return ProspectiveLayout(leadingEdge: layout.leadingEdge, constraints: layout.constraints, remainingGlue: layout.remainingGlue + glue)
+}
+
 func +-+ (layout: ProspectiveLayout, view: UIView) -> ProspectiveLayout {
     return sideBySide(layout, view, 8.0)
 }
