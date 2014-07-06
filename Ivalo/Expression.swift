@@ -14,15 +14,32 @@ operator prefix - {}
 operator postfix - {}
 operator infix ~=~ { precedence 130 }
 
-enum Dimension {
-    case Width
-    case Height
+class ExpressionValue {
+    let expression: Expression
+    init (expression: Expression) {
+        self.expression = expression
+    }
 }
 
 enum Expression {
     case Number(CGFloat)
     case ViewEdge(Edge, UIView)
     case ViewDimension(Dimension, UIView)
+    case LinearFunction(CGFloat, ExpressionValue, CGFloat)
+}
+
+func expressionToLayout (expression: Expression) -> (view: UIView?, attribute: NSLayoutAttribute, multiplier: CGFloat, constant: CGFloat) {
+    switch (expression) {
+    case .Number(let value):
+        return (nil, NSLayoutAttribute.NotAnAttribute, 0.0, value)
+    case .ViewEdge(let edge, let view):
+        return (view, attributeForEdge(edge), 1.0, 0.0)
+    case .ViewDimension(let dimension, let view):
+        return (view, attributeForDimension(dimension), 1.0, 0.0)
+    case .LinearFunction(let multiplier, let expression, let constant):
+        let (view, attribute, innerMultiplier, innerConstant) = expressionToLayout(expression.expression)
+        return (view, attribute, multiplier * innerMultiplier, multiplier * innerConstant + constant)
+    }
 }
 
 @prefix func | (expression: Expression) -> Expression {
@@ -53,24 +70,16 @@ enum Expression {
     return Expression.ViewEdge(.Bottom, view)
 }
 
+func * (scalar: CGFloat, expression: Expression) -> Expression {
+    return Expression.LinearFunction(scalar, ExpressionValue(expression: expression), 0.0)
+}
+
+func + (expression: Expression, constant: CGFloat) -> Expression {
+    return Expression.LinearFunction(1.0, ExpressionValue(expression: expression), constant)
+}
+
 func ~=~ (left: Expression, right: Expression) -> NSLayoutConstraint[] {
-    switch (left) {
-    case .ViewDimension(.Width, let leftView):
-        switch (right) {
-        case .ViewDimension(.Width, let rightView):
-            return [NSLayoutConstraint(item: leftView, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: rightView, attribute: NSLayoutAttribute.Width, multiplier: 1.0, constant: 0.0)]
-        default:
-            assert(false)
-        }
-    case .ViewDimension(.Height, let leftView):
-        switch (right) {
-        case .ViewDimension(.Height, let rightView):
-            return [NSLayoutConstraint(item: leftView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: rightView, attribute: NSLayoutAttribute.Height, multiplier: 1.0, constant: 0.0)]
-        default:
-            assert(false)
-        }
-    default:
-        assert(false)
-    }
-    return []
+    let leftLayout = expressionToLayout(left)
+    let rightLayout = expressionToLayout(right)
+    return [NSLayoutConstraint(item: leftLayout.view, attribute: leftLayout.attribute, relatedBy: NSLayoutRelation.Equal, toItem: rightLayout.view, attribute: rightLayout.attribute, multiplier: rightLayout.multiplier / leftLayout.multiplier, constant: (rightLayout.constant - leftLayout.constant) / leftLayout.multiplier)]
 }

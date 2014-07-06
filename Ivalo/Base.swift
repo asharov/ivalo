@@ -21,6 +21,11 @@ enum Edge {
     case Bottom
 }
 
+enum Dimension {
+    case Width
+    case Height
+}
+
 struct ProspectiveLayout {
     let leadingEdge: Edge
     let constraints: NSLayoutConstraint[]
@@ -49,6 +54,15 @@ func opposingEdge (edge: Edge) -> Edge {
         return Edge.Left
     case .Bottom:
         return Edge.Top
+    }
+}
+
+func attributeForDimension (dimension: Dimension) -> NSLayoutAttribute {
+    switch dimension {
+    case .Width:
+        return NSLayoutAttribute.Width
+    case .Height:
+        return NSLayoutAttribute.Height
     }
 }
 

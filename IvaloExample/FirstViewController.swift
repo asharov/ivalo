@@ -32,10 +32,10 @@ class FirstViewController: UIViewController {
         view <-- Edge.Left +-+ greenView +-+ yellowView +-+ Edge.Right
         view <-- Edge.Top +-+ redView +-+ yellowView +-+ Edge.Bottom
 
-        view <-- |blueView| ~=~ |redView|
-        view <-- |greenView| ~=~ |yellowView|
-        view <-- -blueView- ~=~ -greenView-
-        view <-- -redView- ~=~ -yellowView-
+        view <-- |blueView| ~=~ 2 * |redView|
+        view <-- 2 * |greenView| ~=~ |yellowView|
+        view <-- 2 * -blueView- ~=~ -greenView-
+        view <-- -redView- ~=~ 2 * -yellowView-
     }
 
     override func didReceiveMemoryWarning() {
