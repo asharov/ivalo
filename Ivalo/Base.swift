@@ -53,8 +53,10 @@ func opposingEdge (edge: Edge) -> Edge {
 }
 
 func <-- (view: UIView, layout: ProspectiveLayout) -> UIView {
-    for constraint in layout.constraints {
-        view.addConstraint(constraint)
-    }
+    return view <-- layout.constraints
+}
+
+func <-- (view: UIView, constraints: NSLayoutConstraint[]) -> UIView {
+    view.addConstraints(constraints)
     return view
 }

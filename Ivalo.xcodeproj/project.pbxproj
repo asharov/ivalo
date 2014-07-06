@@ -19,6 +19,7 @@
 		B02CC01C19676B0B0056D034 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02CC01B19676B0B0056D034 /* Images.xcassets */; };
 		B02CC02819676B0B0056D034 /* IvaloExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CC02719676B0B0056D034 /* IvaloExampleTests.swift */; };
 		B02CC02F19676B580056D034 /* Ivalo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02CBFB919661DC10056D034 /* Ivalo.framework */; };
+		B02CC031196956CA0056D034 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CC030196956CA0056D034 /* Expression.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = B02CC00D19676B0B0056D034;
 			remoteInfo = IvaloExample;
+		};
+		B02CC032196957060056D034 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B02CBFB019661DC10056D034 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B02CBFB819661DC10056D034;
+			remoteInfo = Ivalo;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -57,6 +65,7 @@
 		B02CC02119676B0B0056D034 /* IvaloExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IvaloExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02CC02619676B0B0056D034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B02CC02719676B0B0056D034 /* IvaloExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvaloExampleTests.swift; sourceTree = "<group>"; };
+		B02CC030196956CA0056D034 /* Expression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expression.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +131,7 @@
 				B02CBFBC19661DC10056D034 /* Supporting Files */,
 				B02CC006196753C60056D034 /* Base.swift */,
 				B02CC0081967543C0056D034 /* Snuggle.swift */,
+				B02CC030196956CA0056D034 /* Expression.swift */,
 			);
 			path = Ivalo;
 			sourceTree = "<group>";
@@ -250,6 +260,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B02CC033196957060056D034 /* PBXTargetDependency */,
 			);
 			name = IvaloExample;
 			productName = IvaloExample;
@@ -361,6 +372,7 @@
 			files = (
 				B02CC007196753C60056D034 /* Base.swift in Sources */,
 				B02CC0091967543C0056D034 /* Snuggle.swift in Sources */,
+				B02CC031196956CA0056D034 /* Expression.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +414,11 @@
 			isa = PBXTargetDependency;
 			target = B02CC00D19676B0B0056D034 /* IvaloExample */;
 			targetProxy = B02CC02219676B0B0056D034 /* PBXContainerItemProxy */;
+		};
+		B02CC033196957060056D034 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B02CBFB819661DC10056D034 /* Ivalo */;
+			targetProxy = B02CC032196957060056D034 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

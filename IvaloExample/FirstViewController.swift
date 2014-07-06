@@ -10,17 +10,32 @@ import UIKit
 import Ivalo
 
 class FirstViewController: UIViewController {
-                            
+
+    func makeColorView(color: UIColor) -> UIView {
+        let view = UIView()
+        view.backgroundColor = color
+        view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.view.addSubview(view)
+        return view
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let blueView = UIView()
-        blueView.backgroundColor = UIColor.blueColor()
-        blueView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        self.view.addSubview(blueView)
+        let blueView = makeColorView(UIColor.blueColor())
+        let redView = makeColorView(UIColor.redColor())
+        let greenView = makeColorView(UIColor.greenColor())
+        let yellowView = makeColorView(UIColor.yellowColor())
 
-        view <-- Edge.Left +-+ blueView +-+ Edge.Right;
-        self.view.addConstraint(NSLayoutConstraint(item: blueView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 0.0, constant: 100.0))
+        view <-- Edge.Left +-+ blueView +-+ redView +-+ Edge.Right
+        view <-- Edge.Top +-+ blueView +-+ greenView +-+ Edge.Bottom
+        view <-- Edge.Left +-+ greenView +-+ yellowView +-+ Edge.Right
+        view <-- Edge.Top +-+ redView +-+ yellowView +-+ Edge.Bottom
+
+        view <-- |blueView| ~=~ |redView|
+        view <-- |greenView| ~=~ |yellowView|
+        view <-- -blueView- ~=~ -greenView-
+        view <-- -redView- ~=~ -yellowView-
     }
 
     override func didReceiveMemoryWarning() {
