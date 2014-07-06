@@ -11,21 +11,13 @@ import Ivalo
 
 class FirstViewController: UIViewController {
 
-    func makeColorView(color: UIColor) -> UIView {
-        let view = UIView()
-        view.backgroundColor = color
-        view.setTranslatesAutoresizingMaskIntoConstraints(false)
-        self.view.addSubview(view)
-        return view
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let blueView = makeColorView(UIColor.blueColor())
-        let redView = makeColorView(UIColor.redColor())
-        let greenView = makeColorView(UIColor.greenColor())
-        let yellowView = makeColorView(UIColor.yellowColor())
+        let blueView = makeColorView(self.view, UIColor.blueColor())
+        let redView = makeColorView(self.view, UIColor.redColor())
+        let greenView = makeColorView(self.view, UIColor.greenColor())
+        let yellowView = makeColorView(self.view, UIColor.yellowColor())
 
         view <-- Edge.Left +-+ blueView +-+ redView +-+ Edge.Right
         view <-- Edge.Top +-+ blueView +-+ greenView

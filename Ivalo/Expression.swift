@@ -78,6 +78,10 @@ func + (expression: Expression, constant: CGFloat) -> Expression {
     return Expression.LinearFunction(1.0, ExpressionValue(expression: expression), constant)
 }
 
+func ~=~ (left: Expression, right: CGFloat) -> NSLayoutConstraint[] {
+    return left ~=~ Expression.Number(right)
+}
+
 func ~=~ (left: Expression, right: Expression) -> NSLayoutConstraint[] {
     let leftLayout = expressionToLayout(left)
     let rightLayout = expressionToLayout(right)

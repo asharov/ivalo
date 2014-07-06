@@ -19,6 +19,7 @@
 		B02CC01C19676B0B0056D034 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02CC01B19676B0B0056D034 /* Images.xcassets */; };
 		B02CC02F19676B580056D034 /* Ivalo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02CBFB919661DC10056D034 /* Ivalo.framework */; };
 		B02CC031196956CA0056D034 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CC030196956CA0056D034 /* Expression.swift */; };
+		B02CC035196993A10056D034 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CC034196993A10056D034 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		B02CC01919676B0B0056D034 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B02CC01B19676B0B0056D034 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B02CC030196956CA0056D034 /* Expression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expression.swift; sourceTree = "<group>"; };
+		B02CC034196993A10056D034 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				B02CC01819676B0B0056D034 /* Main.storyboard */,
 				B02CC01B19676B0B0056D034 /* Images.xcassets */,
 				B02CC01019676B0B0056D034 /* Supporting Files */,
+				B02CC034196993A10056D034 /* Helper.swift */,
 			);
 			path = IvaloExample;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				B02CC01719676B0B0056D034 /* SecondViewController.swift in Sources */,
 				B02CC01319676B0B0056D034 /* AppDelegate.swift in Sources */,
 				B02CC01519676B0B0056D034 /* FirstViewController.swift in Sources */,
+				B02CC035196993A10056D034 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
