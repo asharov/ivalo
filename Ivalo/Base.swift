@@ -23,6 +23,7 @@ enum Dimension {
 struct ProspectiveLayout {
     let leadingEdge: Edge
     let constraints: NSLayoutConstraint[]
+    let remainingGlue: CGFloat
 }
 
 func attributeForEdge (edge: Edge) -> NSLayoutAttribute {
