@@ -8,12 +8,6 @@
 
 import Foundation
 
-class Barfoo {
-    class func foobar () {
-
-    }
-}
-
 enum Edge {
     case Left
     case Top
