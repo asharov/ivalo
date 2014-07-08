@@ -13,7 +13,7 @@ operator infix ++ { associativity left precedence 110 }
 
 struct ProspectiveLayout {
     let leadingEdge: Edge
-    let constraints: NSLayoutConstraint[]
+    let constraints: [NSLayoutConstraint]
     let remainingGlue: CGFloat
 }
 

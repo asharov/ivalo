@@ -48,7 +48,7 @@ enum Expression<T: ExpressionType> {
 }
 
 struct Equality<T: ExpressionType> {
-    let expressions: Expression<T>[]
+    let expressions: [Expression<T>]
 }
 
 func expressionToLayout<T: ExpressionType> (expression: Expression<T>) -> (view: UIView?, attribute: NSLayoutAttribute, multiplier: CGFloat, constant: CGFloat) {
@@ -132,7 +132,7 @@ func ~=~<T: ExpressionType> (left: Equality<T>, right: Expression<T>) -> Equalit
 }
 
 func <--<T: ExpressionType> (view: UIView, equality: Equality<T>) -> UIView {
-    for i in 1..equality.expressions.count {
+    for i in 1..<equality.expressions.count {
         view <-- equalityConstraint(equality.expressions[i-1], equality.expressions[i])
     }
     return view

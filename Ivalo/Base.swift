@@ -62,7 +62,7 @@ func <-- (view: UIView, constraint: NSLayoutConstraint) -> UIView {
     return view
 }
 
-func <-- (view: UIView, constraints: NSLayoutConstraint[]) -> UIView {
+func <-- (view: UIView, constraints: [NSLayoutConstraint]) -> UIView {
     view.addConstraints(constraints)
     return view
 }
