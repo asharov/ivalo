@@ -10,14 +10,14 @@ import Foundation
 
 operator infix <-- { associativity left }
 
-enum Edge {
+public enum Edge {
     case Left
     case Top
     case Right
     case Bottom
 }
 
-enum Dimension {
+public enum Dimension {
     case Width
     case Height
 }

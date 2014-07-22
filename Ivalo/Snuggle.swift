@@ -11,10 +11,46 @@ import Foundation
 operator infix +-+ { associativity left precedence 110 }
 operator infix ++ { associativity left precedence 110 }
 
-struct ProspectiveLayout {
+public struct ProspectiveLayout {
     let leadingEdge: Edge
     let constraints: [NSLayoutConstraint]
     let remainingGlue: CGFloat
+}
+
+public func ++ (edge: Edge, view: UIView) -> ProspectiveLayout {
+    return sideBySide(edge, view, 0.0);
+}
+
+public func ++ (edge: Edge, glue: CGFloat) -> ProspectiveLayout {
+    return ProspectiveLayout(leadingEdge: edge, constraints: [], remainingGlue: glue)
+}
+
+public func +-+ (edge: Edge, view: UIView) -> ProspectiveLayout {
+    return sideBySide(edge, view, 20.0);
+}
+
+public func ++ (layout: ProspectiveLayout, view: UIView) -> ProspectiveLayout {
+    return sideBySide(layout, view, 0.0)
+}
+
+public func ++ (layout: ProspectiveLayout, glue: CGFloat) -> ProspectiveLayout {
+    return ProspectiveLayout(leadingEdge: layout.leadingEdge, constraints: layout.constraints, remainingGlue: layout.remainingGlue + glue)
+}
+
+public func +-+ (layout: ProspectiveLayout, view: UIView) -> ProspectiveLayout {
+    return sideBySide(layout, view, 8.0)
+}
+
+public func ++ (layout: ProspectiveLayout, edge: Edge) -> ProspectiveLayout {
+    return sideBySide(layout, edge, 0.0)
+}
+
+public func +-+ (layout: ProspectiveLayout, edge: Edge) -> ProspectiveLayout {
+    return sideBySide(layout, edge, 20.0)
+}
+
+public func <-- (view: UIView, layout: ProspectiveLayout) -> UIView {
+    return view <-- layout.constraints
 }
 
 func previousViewInLayout (layout: ProspectiveLayout, view: UIView?) -> UIView? {
@@ -48,40 +84,4 @@ func sideBySide (layout: ProspectiveLayout, edge: Edge, gap: CGFloat) -> Prospec
     let view = previousViewInLayout(layout, nil)
     let constraint = NSLayoutConstraint(item: view, attribute: attribute, relatedBy: NSLayoutRelation.Equal, toItem: view?.superview, attribute: attribute, multiplier: 1.0, constant: -gap - layout.remainingGlue)
     return ProspectiveLayout(leadingEdge: layout.leadingEdge, constraints: layout.constraints + [constraint], remainingGlue: 0.0)
-}
-
-func ++ (edge: Edge, view: UIView) -> ProspectiveLayout {
-    return sideBySide(edge, view, 0.0);
-}
-
-func ++ (edge: Edge, glue: CGFloat) -> ProspectiveLayout {
-    return ProspectiveLayout(leadingEdge: edge, constraints: [], remainingGlue: glue)
-}
-
-func +-+ (edge: Edge, view: UIView) -> ProspectiveLayout {
-    return sideBySide(edge, view, 20.0);
-}
-
-func ++ (layout: ProspectiveLayout, view: UIView) -> ProspectiveLayout {
-    return sideBySide(layout, view, 0.0)
-}
-
-func ++ (layout: ProspectiveLayout, glue: CGFloat) -> ProspectiveLayout {
-    return ProspectiveLayout(leadingEdge: layout.leadingEdge, constraints: layout.constraints, remainingGlue: layout.remainingGlue + glue)
-}
-
-func +-+ (layout: ProspectiveLayout, view: UIView) -> ProspectiveLayout {
-    return sideBySide(layout, view, 8.0)
-}
-
-func ++ (layout: ProspectiveLayout, edge: Edge) -> ProspectiveLayout {
-    return sideBySide(layout, edge, 0.0)
-}
-
-func +-+ (layout: ProspectiveLayout, edge: Edge) -> ProspectiveLayout {
-    return sideBySide(layout, edge, 20.0)
-}
-
-func <-- (view: UIView, layout: ProspectiveLayout) -> UIView {
-    return view <-- layout.constraints
 }
