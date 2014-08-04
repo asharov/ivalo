@@ -8,7 +8,7 @@
 
 import Foundation
 
-operator infix <-- { associativity left }
+infix operator  <-- { associativity left }
 
 public enum Edge {
     case Left

@@ -8,8 +8,8 @@
 
 import Foundation
 
-operator infix +-+ { associativity left precedence 110 }
-operator infix ++ { associativity left precedence 110 }
+infix operator  +-+ { associativity left precedence 110 }
+infix operator  ++ { associativity left precedence 110 }
 
 public struct ProspectiveLayout {
     let leadingEdge: Edge

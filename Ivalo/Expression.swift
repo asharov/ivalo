@@ -8,11 +8,11 @@
 
 import Foundation
 
-operator prefix | {}
-operator postfix | {}
-operator prefix - {}
-operator postfix - {}
-operator infix ~=~ { associativity left precedence 130 }
+prefix operator  | {}
+postfix operator  | {}
+prefix operator  - {}
+postfix operator  - {}
+infix operator  ~=~ { associativity left precedence 130 }
 
 // A marker protocol to use as a type parameter to make nonsensical constraints,
 // like equating a left edge with a height, compile-time errors instead of run-time
@@ -51,11 +51,11 @@ public struct Equality<T: ExpressionType> {
     let expressions: [Expression<T>]
 }
 
-@prefix public func | (view: UIView) -> Expression<HorizontalExpression> {
+prefix public func | (view: UIView) -> Expression<HorizontalExpression> {
     return .ViewEdge(.Left, view)
 }
 
-@prefix public func | (expression: Expression<HorizontalExpression>) -> Expression<DimensionExpression> {
+prefix public func | (expression: Expression<HorizontalExpression>) -> Expression<DimensionExpression> {
     switch expression {
     case .ViewEdge(.Right, let view):
         return .ViewDimension(.Width, view)
@@ -65,15 +65,15 @@ public struct Equality<T: ExpressionType> {
     }
 }
 
-@postfix public func | (view: UIView) -> Expression<HorizontalExpression> {
+postfix public func | (view: UIView) -> Expression<HorizontalExpression> {
     return .ViewEdge(.Right, view)
 }
 
-@prefix public func - (view: UIView) -> Expression<VerticalExpression> {
+prefix public func - (view: UIView) -> Expression<VerticalExpression> {
     return .ViewEdge(.Top, view)
 }
 
-@prefix public func - (expression: Expression<VerticalExpression>) -> Expression<DimensionExpression> {
+prefix public func - (expression: Expression<VerticalExpression>) -> Expression<DimensionExpression> {
     switch expression {
     case .ViewEdge(.Bottom, let view):
         return .ViewDimension(.Height, view)
@@ -83,7 +83,7 @@ public struct Equality<T: ExpressionType> {
     }
 }
 
-@postfix public func - (view: UIView) -> Expression<VerticalExpression> {
+postfix public func - (view: UIView) -> Expression<VerticalExpression> {
     return .ViewEdge(.Bottom, view)
 }
 
